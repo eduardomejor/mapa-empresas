@@ -1,0 +1,26 @@
+/* layout.css: cómo se colocan las grandes zonas de la página. */
+
+/* Cabecera superior */
+header{
+  height:64px;padding:0 28px;display:flex;align-items:center;gap:14px;
+  border-bottom:1px solid var(--line);background:#fff;
+}
+header h1{margin:0;font-size:17px;font-weight:600;letter-spacing:-.01em}
+header span{font-size:13px;color:var(--mut)}
+
+/* Contenedor principal: mapa + lista (la cabecera mide 64px) */
+#wrap{display:flex;height:calc(100% - 64px)}
+#map{flex:1;background:#f3f4f6}
+
+/* Panel lateral con scroll propio */
+#side{
+  width:380px;overflow:auto;padding:8px 20px 24px;
+  background:#fff;border-left:1px solid var(--line);
+}
+
+/* Móvil: el panel pasa debajo del mapa */
+@media(max-width:800px){
+  #wrap{flex-direction:column}
+  #side{width:auto;height:45%;border-left:0;border-top:1px solid var(--line)}
+  header span{display:none}
+}

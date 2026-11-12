@@ -1,0 +1,61 @@
+/* components.css: piezas reutilizables (tarjetas, pines, botones, ventana 3D). */
+
+/* ---------- Lista lateral ---------- */
+.zona{
+  margin:22px 0 8px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  font-weight:600;color:var(--mut);display:flex;align-items:center;gap:8px;
+}
+.zona i{width:8px;height:8px;border-radius:50%;display:inline-block}
+
+.card{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.card:hover{background:var(--bg)}
+.card h3{margin:0 0 3px;font-size:14px;font-weight:600}
+.card p{margin:0;font-size:12.5px;color:var(--mut);line-height:1.5}
+.card p.r{margin-top:6px;color:#374151}          /* párrafo "Por qué está aquí" */
+.card p.r b,#ms b{font-weight:600;color:var(--ink)}
+
+/* Círculo con el número de la tarjeta */
+.num{
+  min-width:24px;height:24px;border-radius:50%;border:1.5px solid;margin-top:1px;
+  display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;
+}
+
+/* Conclusión al final de la lista */
+.nota{
+  margin-top:24px;padding-left:12px;border-left:2px solid var(--acc);
+  font-size:12.5px;line-height:1.6;color:#374151;
+}
+
+/* ---------- Pines del mapa 2D ---------- */
+.pin{
+  width:26px;height:26px;border-radius:50%;background:#fff;border:2px solid;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11.5px;font-weight:700;box-shadow:0 1px 4px #0003;cursor:pointer;
+}
+
+/* ---------- Ventana 3D ---------- */
+#modal{
+  position:fixed;inset:0;background:#0008;z-index:5000;padding:24px;
+  display:none;align-items:center;justify-content:center;   /* JS lo cambia a flex */
+}
+#box{
+  width:min(1100px,100%);height:min(720px,100%);background:#fff;border-radius:10px;
+  overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 40px #0005;
+}
+#bar{
+  padding:12px 16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  border-bottom:1px solid var(--line);
+}
+#bar .t{flex:1;min-width:260px}
+#bar h2{margin:0;font-size:16px;font-weight:600}
+#bar small{display:block;color:var(--mut);font-size:12px;margin-top:3px;line-height:1.5}
+#m3d{flex:1;background:#e5e7eb}
+
+/* ---------- Botones ---------- */
+.btn{
+  border:1px solid var(--line);border-radius:6px;padding:7px 12px;
+  font:inherit;font-size:12.5px;font-weight:500;cursor:pointer;
+  color:var(--ink);background:#fff;text-decoration:none;white-space:nowrap;
+}
+.btn:hover{background:var(--bg)}
+.btn.on{background:var(--ink);color:#fff;border-color:var(--ink)}   /* botón activo */

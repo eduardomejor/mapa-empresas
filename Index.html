@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+  index.html: estructura de la página.
+  Solo contiene el HTML. Los estilos están en css/ y la lógica en js/.
+  Ábrelo con doble clic (necesita internet para cargar los mapas).
+-->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Empresas del sector informático: dónde se sitúan</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- Librerías externas (estilos) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+
+  <!-- Estilos propios, en orden: variables, diseño general, componentes -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <header>
+    <h1>Empresas del sector informático: dónde se sitúan</h1>
+    <span>Pulsa un número para ver la zona en 3D</span>
+  </header>
+
+  <!-- Zona principal: mapa 2D a la izquierda y lista a la derecha -->
+  <div id="wrap">
+    <div id="map"></div>
+    <aside id="side"></aside>
+  </div>
+
+  <!-- Ventana emergente con la vista 3D (oculta hasta que se pulsa una empresa) -->
+  <div id="modal">
+    <div id="box">
+      <div id="bar">
+        <div class="t">
+          <h2 id="mt"></h2>
+          <small id="ms"></small>
+        </div>
+        <button class="btn on" id="b-sat">Satélite 3D</button>
+        <button class="btn" id="b-3d">Mapa 3D</button>
+        <button class="btn" id="rot">Pausar giro</button>
+        <a class="btn" id="ge" target="_blank" rel="noopener">Google Earth 3D</a>
+        <a class="btn" id="sv" target="_blank" rel="noopener">Street View</a>
+        <button class="btn" id="cl">Cerrar</button>
+      </div>
+      <div id="m3d"></div>
+    </div>
+  </div>
+
+  <!-- Librerías externas (código) -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+
+  <!-- Código propio. EL ORDEN IMPORTA: cada archivo usa lo que define el anterior -->
+  <script src="js/datos.js"></script>     <!-- 1. empresas y colores -->
+  <script src="js/visor3d.js"></script>   <!-- 2. ventana 3D -->
+  <script src="js/panel.js"></script>     <!-- 3. lista lateral -->
+  <script src="js/mapa.js"></script>      <!-- 4. mapa 2D y arranque -->
+</body>
+</html>

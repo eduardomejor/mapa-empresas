@@ -1,0 +1,15 @@
+/* base.css: variables de color y reglas generales.
+   Para cambiar la paleta de toda la web, edita solo esta sección. */
+:root{
+  --ink:#111827;   /* texto principal */
+  --mut:#6b7280;   /* texto secundario */
+  --line:#e5e7eb;  /* líneas y bordes */
+  --bg:#fafafa;    /* fondo al pasar el ratón */
+  --acc:#1f3a5f;   /* color de acento (azul marino) */
+}
+*{box-sizing:border-box}
+html,body{
+  height:100%;margin:0;background:#fff;color:var(--ink);
+  font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
